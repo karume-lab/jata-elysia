@@ -1,0 +1,52 @@
+@import "@mantine/core/styles.css";
+@import "@mantine/notifications/styles.css";
+
+:root {
+  --mantine-font-family: "Inter", system-ui, sans-serif;
+  --premium-gradient: linear-gradient(135deg, #ffffff 0%, #a5a5a5 100%);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--mantine-color-black-9);
+  color: var(--mantine-color-white);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--mantine-radius-lg);
+}
+
+.premium-gradient {
+  background: var(--premium-gradient);
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

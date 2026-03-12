@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Build premium Next.js app",
+    "completed": true,
+    "userId": "user_1"
+  },
+  {
+    "title": "Integrate Elysia and Drizzle",
+    "completed": true,
+    "userId": "user_1"
+  },
+  {
+    "title": "Setup Better Auth",
+    "completed": true,
+    "userId": "user_2"
+  },
+  {
+    "title": "Configure Hugging Face deployment",
+    "completed": true,
+    "userId": "user_2"
+  },
+  {
+    "title": "Implement database seeding",
+    "completed": false,
+    "userId": "user_1"
+  }
+]

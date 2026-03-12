@@ -1,0 +1,51 @@
+{
+  "name": "jata-elysia",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build:web": "next build",
+    "start": "next start",
+    "ui": "bunx shadcn@latest add",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next node_modules bun.lock",
+    "postinstall": "lefthook install",
+    "reinstall-packages": "pkill -f bun; find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + || true; rm -f bun.lock; bun install",
+    "db:generate-auth": "bunx @better-auth/cli@latest generate --output ./src/db/schema/auth.ts --config ./src/lib/auth.ts --yes",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:reset": "[ -d src/db/migrations ] && rm -rf src/db/migrations/ && bun run db:generate-auth && bun run db:generate && bun run db:push",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "bun run src/db/seed.ts"
+  },
+  "dependencies": {
+    "@mantine/core": "^8.3.16",
+    "@mantine/hooks": "^8.3.16",
+    "@mantine/notifications": "^8.3.16",
+    "@tanstack/react-query": "^5.90.21",
+    "better-auth": "^1.5.5",
+    "drizzle-orm": "^0.45.1",
+    "elysia": "^1.4.27",
+    "lucide-react": "^0.577.0",
+    "next": "16.1.6",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "postgres": "^3.4.8",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
+    "@types/node": "^25.4.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "drizzle-kit": "^0.31.9",
+    "lefthook": "^2.1.4",
+    "postcss": "8.5.8",
+    "typescript": "^5.9.3"
+  }
+}
